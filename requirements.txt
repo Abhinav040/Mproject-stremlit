@@ -2,6 +2,7 @@ numpy==1.26.3
 streamlit==1.30.0
 tensorflow
 pillow
+python-dotenv
 
 
 

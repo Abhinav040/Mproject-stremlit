@@ -3,7 +3,13 @@ import numpy as np
 import tensorflow as tf
 import json
 from PIL import Image
-import requests  # For chatbot API call
+import requests
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
 
 # Load model and class indices
 model_path = "./trained_model/plant_disease_prediction_model.h5"
@@ -28,9 +34,9 @@ def predict_image_class(model, image, class_indices):
 
 # Function to query Python chatbot API
 def query_chatbot(question):
-    url = "https://devbots-server.vercel.app/api/chatbots/chat"  # Replace with your Python chatbot API URL
+    url = "https://devbots-server.vercel.app/api/chatbots/chat"  
     payload = {
-        "apiKey": "c77089c2595d3851d59a2afa2a75be1363267c24e36dfc69b43e645dc4f819e3",  # Replace with your actual API key
+        "apiKey": API_KEY,  
         "query": question
     }
     headers = {"Content-Type": "application/json"}

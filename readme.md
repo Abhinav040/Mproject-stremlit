@@ -1,0 +1,1 @@
+create .env file and assign your api key to variable name "API_KEY" from https://devbots.vercel.app/ .
